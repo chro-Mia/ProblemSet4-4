@@ -16,7 +16,8 @@ public class Main {
         System.out.println(duration);
     }
     //binary search is much faster especially for larger arrays
-    //linear search gets cooked by large arrays
+    //linear search is super slow large arrays (many times slower)
+    //but linear search also works for unsorted arrays
 
     public static int[] selectionSort(int[] array){
         int index = 0;
@@ -47,24 +48,23 @@ public class Main {
             array[j + 1] = intToSort;
         }
 
-
         return array;
     }
 
     public static int binarySearch(int[] array, int numToFind){
-        int min = 0;
-        int max = array.length - 1;
+        int minIndex = 0;
+        int maxIndex = array.length - 1;
 
-        while(min <= max) {
-            int mid = min + (max - min) / 2;
+        while(minIndex <= maxIndex){
+            int mid = minIndex + (maxIndex - minIndex) / 2;
             if(array[mid] == numToFind){
                 return mid;
             }
             if(array[mid] < numToFind){
-                min = mid + 1;
+                minIndex = mid + 1;
             }
             else{
-                max = mid - 1;
+                maxIndex = mid - 1;
             }
         }
 
