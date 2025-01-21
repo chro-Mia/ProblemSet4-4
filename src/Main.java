@@ -55,12 +55,12 @@ public class Main {
         int min = 0;
         int max = array.length - 1;
 
-        while (min <= max) {
+        while(min <= max) {
             int mid = min + (max - min) / 2;
-            if (array[mid] == numToFind){
+            if(array[mid] == numToFind){
                 return mid;
             }
-            if (array[mid] < numToFind){
+            if(array[mid] < numToFind){
                 min = mid + 1;
             }
             else{
